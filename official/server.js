@@ -25,3 +25,7 @@ app.post('/comments.json', function(req, res){
 		});
 	});
 });
+
+app.listen(3000);
+
+console.log("Server started: http://localhost:3000/");
