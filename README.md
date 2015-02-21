@@ -1,2 +1,2 @@
 # practice-react
-Practicing Reac
+Practicing React: Tutorials for learning react
