@@ -1,3 +1,6 @@
+// Markdown converter
+var converter = new Showdown.converter();
+
 var Comment = React.createClass({
 	render: function(){
 		return (
