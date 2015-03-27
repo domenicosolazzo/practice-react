@@ -10,22 +10,20 @@ var MOCKED_MOVIES_DATA = [
 ];
 var {
   AppRegistry,
+  Image,
   StyleSheet,
   Text,
   View,
 } = React;
 
 var Movies = React.createClass({
-  render: function() {
+   render: function() {
+    var movie = MOCKED_MOVIES_DATA[0];
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js{'\n'}
-          Press Cmd+R to reload
-        </Text>
+        <Text>{movie.title}</Text>
+        <Text>{movie.year}</Text>
+        <Image source={{uri: movie.posters.thumbnail}} />
       </View>
     );
   }
