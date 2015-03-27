@@ -8,6 +8,12 @@ var React = require('react-native');
 var MOCKED_MOVIES_DATA = [
   {title: 'Title', year: '2015', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
 ];
+var API_KEY = '7waqfqbprs7pajbz28mqf6vz';
+var API_URL = 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json';
+var PAGE_SIZE = 25;
+var PARAMS = '?apikey=' + API_KEY + '&page_limit=' + PAGE_SIZE;
+var REQUEST_URL = API_URL + PARAMS;
+
 var {
   AppRegistry,
   Image,
