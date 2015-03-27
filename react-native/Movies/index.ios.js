@@ -23,7 +23,7 @@ var Movies = React.createClass({
       <View style={styles.container}>
         <Text>{movie.title}</Text>
         <Text>{movie.year}</Text>
-        <Image source={{uri: movie.posters.thumbnail}} />
+        <Image style={styles.thumbnail} source={{uri: movie.posters.thumbnail}} />
       </View>
     );
   }
@@ -35,6 +35,10 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  thumbnail:{
+    width: 53,
+    height: 81
   },
   welcome: {
     fontSize: 20,
