@@ -18,6 +18,7 @@ var {
   AppRegistry,
   Image,
   StyleSheet,
+  ListView,
   Text,
   View,
 } = React;
