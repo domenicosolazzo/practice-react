@@ -42,18 +42,36 @@ var Movies = React.createClass({
         })
         .done();
    },
-   render: function() {
-    var movie = MOCKED_MOVIES_DATA[0];
+   renderLoadingView(){
     return (
-      <View style={styles.container}>
-        <Image style={styles.thumbnail} source={{uri: movie.posters.thumbnail}} />
-        <View style={styles.rightContainer}>
-            <Text style={styles.title}>{movie.title}</Text>
-            <Text style={styles.year}>{movie.year}</Text>
+        <View style={styles.container}>
+            <Text>
+                Loading movies....
+            </Text>
         </View>
-      </View>
     );
-  }
+   },
+   renderMovie: function(movie){
+    return (
+        <View style={styles.container}>
+            <Image
+                source={{uri: movie.posters.thumbnail}}
+                style={styles.thumbnail}
+            />
+            <View style={styles.rightContainer}>
+                <Text style={styles.title}>{movie.title}</Text>
+                <Text style={styles.year}>{movie.year}</Text>
+            </View>
+        </View>
+    );             
+   },
+   render: function() {
+    if (!this.state.movies){
+        return this.renderLoadingView();
+    }
+    var movie = this.state.movies[0];
+    return this.renderMovie(movie);
+   }
 });
 
 var styles = StyleSheet.create({
